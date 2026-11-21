@@ -8,6 +8,38 @@
 
 export const projects = [
   {
+    id: 'mindcare-ai',
+    title: 'MindCare AI',
+    code: 'safety → RAG → LLM',
+    cats: ['ai', 'data'],
+    context: { en: 'Nexus HealthTech Hackathon · Nov 2026', fr: 'Hackathon Nexus HealthTech · nov. 2026' },
+    team: true,
+    short: {
+      en: 'French-language psychoeducation assistant prototype: deterministic safety rules first, sourced answers with RAG, and a local LLM checked by code.',
+      fr: 'Prototype d’assistant de psychoéducation en français : règles de sécurité déterministes, réponses sourcées par RAG et LLM local contrôlé par le code.',
+    },
+    tech: ['Python', 'FastAPI', 'sentence-transformers', 'scikit-learn', 'FAISS', 'Ollama', 'SQLAlchemy', 'pytest'],
+    repo: 'https://github.com/meryemammari23/mindcare-ai',
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A psychoeducation assistant in French built for an AI & Health hackathon. Principle: the LLM phrases, the code controls, the sources justify. It is a prototype, not a medical device and not a diagnostic tool.',
+        problem: 'A conversational assistant on mental health must never improvise in an emergency or give unsourced information.',
+        objectives: ['Detect urgent situations before any AI step', 'Answer only with cited, licensed sources', 'Keep conversations anonymous and private by default'],
+        solution: 'A deterministic Safety Gate analyses every message first and returns verified help numbers (France, Morocco) in urgent cases. Then theme and support-level detection, an emotion estimate (MiniLM embeddings + logistic regression), a RAG over 166 WHO and NHS passages, and an empathic reflection from a local LLM that the code validates.',
+        architecture: 'FastAPI backend · rule-based Safety Gate · FAISS + BM25 retrieval · Ollama (local LLM) · encrypted history only with consent · patient, professional and admin spaces · several hundred automated tests (unit, safety, integration, end-to-end).',
+      },
+      fr: {
+        overview: 'Un assistant de psychoéducation en français réalisé pour un hackathon IA & Santé. Principe : le LLM formule, le code contrôle, les sources justifient. C’est un prototype, ni un dispositif médical ni un outil de diagnostic.',
+        problem: 'Un assistant conversationnel sur la santé mentale ne doit jamais improviser face à une urgence ni donner une information non sourcée.',
+        objectives: ['Détecter les situations urgentes avant toute étape d’IA', 'Répondre uniquement avec des sources citées et sous licence', 'Garder les conversations anonymes et confidentielles par défaut'],
+        solution: 'Un Safety Gate déterministe analyse chaque message en premier et renvoie des numéros d’aide vérifiés (France, Maroc) en cas d’urgence. Viennent ensuite la détection du thème et du niveau de soutien, une estimation de l’émotion (embeddings MiniLM + régression logistique), un RAG sur 166 passages de l’OMS et du NHS, et un reflet empathique formulé par un LLM local et validé par le code.',
+        architecture: 'Backend FastAPI · Safety Gate à base de règles · recherche FAISS + BM25 · Ollama (LLM local) · historique chiffré uniquement avec consentement · espaces patient, professionnel et administration · plusieurs centaines de tests automatisés (unitaires, sécurité, intégration, bout en bout).',
+      },
+    },
+  },
+  {
     id: 'dekra-centre-manager',
     title: 'DEKRA Centre Manager',
     code: 'OCR · forecast · anomalies',
