@@ -1,0 +1,262 @@
+// Projets affichés dans la section Projects.
+// Pour ajouter un projet : copie un bloc, change `id` (sans espaces), puis remplis les textes en/fr.
+// Captures : dépose tes images dans src/assets/projects/<id>/ (ex. src/assets/projects/quoteflow/01.png).
+//   La première image (ordre alphabétique) sert de couverture. Rien à modifier dans le code.
+// Vidéo de démo : mets l'identifiant YouTube dans `youtube` (la partie après "v=" dans l'URL).
+// cats : ai | data | fullstack | se
+// team : true affiche « Team project » sur la carte et la note d'équipe dans la fiche détaillée.
+
+export const projects = [
+  {
+    id: 'dekra-centre-manager',
+    title: 'DEKRA Centre Manager',
+    code: 'OCR · forecast · anomalies',
+    cats: ['ai', 'data', 'fullstack'],
+    context: { en: 'DEKRA Maroc internship · 2026', fr: 'Stage DEKRA Maroc · 2026' },
+    short: {
+      en: 'Web application that digitalises the daily work of a vehicle inspection centre manager, with an offline AI module.',
+      fr: "Application web qui digitalise les missions quotidiennes d'un chef de centre de contrôle technique, avec un module d'IA hors ligne.",
+    },
+    tech: ['Python', 'FastAPI', 'SQLModel', 'scikit-learn', 'pandas', 'RapidOCR', 'JWT', 'pytest'],
+    repo: 'https://github.com/meryemammari23/dekra-centre-manager',
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A web application for the manager of a DEKRA vehicle inspection centre: dashboard, appointments, inspections, staff and planning, equipment, stock, cash desk, compliance audits and monthly reports, with four user roles.',
+        problem: 'A centre manager follows many daily tasks (appointments, inspections, staff, equipment calibration, stock, cash) across separate tools, which takes time and makes monitoring difficult.',
+        objectives: ['Bring the daily tasks of the centre into one application', 'Read vehicle registration cards automatically', 'Forecast daily traffic and detect anomalies', 'Generate the monthly report for head office in one click'],
+        solution: 'A FastAPI backend with JWT and four roles, and an AI module that runs fully offline: OCR of the registration card, traffic forecasting with Gradient Boosting, anomaly detection with Isolation Forest and robust z-scores, and an assistant that searches the FAQ and internal procedures.',
+        architecture: 'FastAPI + SQLModel (SQLite) · AI module (RapidOCR/ONNX, scikit-learn, pandas) · PDF (ReportLab) and Excel (openpyxl) reports · 33 automated tests with pytest · simulated data only.',
+      },
+      fr: {
+        overview: "Une application web pour le chef d'un centre de contrôle technique DEKRA : tableau de bord, rendez-vous, contrôles, personnel et planning, équipements, stocks, caisse, audits de conformité et rapports mensuels, avec quatre rôles utilisateurs.",
+        problem: 'Un chef de centre suit de nombreuses tâches quotidiennes (rendez-vous, contrôles, personnel, étalonnage des équipements, stocks, caisse) dans des outils séparés, ce qui prend du temps et complique le suivi.',
+        objectives: ["Réunir les tâches quotidiennes du centre dans une seule application", 'Lire automatiquement les cartes grises', "Prévoir l'affluence et détecter les anomalies", 'Générer le rapport mensuel pour le siège en un clic'],
+        solution: "Un backend FastAPI avec JWT et quatre rôles, et un module d'IA qui fonctionne entièrement hors ligne : OCR de la carte grise, prévision d'affluence par Gradient Boosting, détection d'anomalies par Isolation Forest et z-score robuste, et un assistant qui cherche dans la FAQ et les procédures internes.",
+        architecture: 'FastAPI + SQLModel (SQLite) · module IA (RapidOCR/ONNX, scikit-learn, pandas) · rapports PDF (ReportLab) et Excel (openpyxl) · 33 tests automatisés avec pytest · données simulées uniquement.',
+      },
+    },
+  },
+  {
+    id: 'medical-extractor',
+    title: 'Medical Extractor',
+    code: 'ingest → OCR → parse',
+    cats: ['ai', 'data'],
+    context: { en: 'Estatmar internship · 2026', fr: 'Stage Estatmar · 2026' },
+    short: {
+      en: 'Local, GDPR-compliant extraction of structured data from medical documents.',
+      fr: 'Extraction locale et conforme au RGPD de données structurées à partir de documents médicaux.',
+    },
+    tech: ['Python', 'PaddleOCR', 'FastAPI', 'PostgreSQL'],
+    team: true,
+    repo: 'https://github.com/douaedr/medextract-ia-chatbot',
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A document processing tool that turns scanned medical documents into structured, searchable data, running entirely on local infrastructure.',
+        problem: 'Medical documents contain sensitive personal data, so sending them to external cloud services is not acceptable under GDPR.',
+        objectives: ['Extract key information from scanned documents', 'Keep all processing local', 'Store normalised results in a database'],
+        solution: 'A modular pipeline where each stage can be developed and tested on its own.',
+        architecture: 'Ingestion → OCR → parsing → normalisation → database, exposed through a Python service.',
+      },
+      fr: {
+        overview: 'Un outil de traitement documentaire qui transforme des documents médicaux scannés en données structurées et consultables, entièrement en local.',
+        problem: "Les documents médicaux contiennent des données personnelles sensibles : les envoyer vers un service cloud externe n'est pas acceptable au regard du RGPD.",
+        objectives: ['Extraire les informations clés des documents scannés', 'Garder tout le traitement en local', 'Stocker des résultats normalisés en base'],
+        solution: 'Un pipeline modulaire où chaque étape se développe et se teste séparément.',
+        architecture: 'Ingestion → OCR → parsing → normalisation → base de données, exposés par un service Python.',
+      },
+    },
+  },
+  {
+    id: 'quoteflow',
+    title: 'QuoteFlow',
+    code: 'request → quote → PDF',
+    cats: ['fullstack', 'se'],
+    context: { en: 'Estatmar internship · 2026', fr: 'Stage Estatmar · 2026' },
+    short: {
+      en: 'Web platform that manages client quote requests, generates PDF quotes and sends automated email notifications.',
+      fr: 'Plateforme web de gestion des demandes de devis, avec génération de devis PDF et notifications e-mail automatisées.',
+    },
+    tech: ['Java', 'Spring Boot', 'JWT', 'MySQL', 'n8n', 'Postman'],
+    team: true,
+    repo: 'https://github.com/meryemammari23/plateforme-devis-estatmar',
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A quote management platform for handling client requests from submission to the final PDF quote.',
+        problem: 'Quote requests were handled manually, which made follow-up slow and hard to track.',
+        objectives: ['Centralise client quote requests', 'Generate quotes as PDF', 'Notify clients automatically'],
+        solution: 'A Spring Boot backend secured with JWT, PDF generation, and n8n workflows triggered by webhooks for email notifications.',
+        architecture: 'REST API (Spring Boot, JWT) · MySQL · n8n webhooks · API tests with Postman.',
+      },
+      fr: {
+        overview: "Une plateforme de gestion de devis qui suit chaque demande client, du dépôt jusqu'au devis PDF.",
+        problem: 'Les demandes de devis étaient traitées à la main, ce qui rendait le suivi lent et difficile.',
+        objectives: ['Centraliser les demandes de devis', 'Générer les devis en PDF', 'Notifier les clients automatiquement'],
+        solution: 'Un backend Spring Boot sécurisé par JWT, la génération de PDF et des workflows n8n déclenchés par webhooks pour les e-mails.',
+        architecture: "API REST (Spring Boot, JWT) · MySQL · webhooks n8n · tests d'API avec Postman.",
+      },
+    },
+  },
+  {
+    id: 'smart-recruitment',
+    title: 'SIR · Smart Recruitment System',
+    code: 'CV → embeddings → score',
+    cats: ['ai', 'data', 'fullstack'],
+    context: { en: 'PFA project · 2025–2026', fr: 'Projet PFA · 2025–2026' },
+    short: {
+      en: 'Microservices recruitment platform with automatic CV scoring using NLP embeddings.',
+      fr: 'Plateforme de recrutement en microservices avec scoring automatique des CV par embeddings NLP.',
+    },
+    tech: ['FastAPI', 'sentence-transformers', 'Spring Boot', 'ASP.NET Core', 'Angular', 'RabbitMQ', 'PostgreSQL', 'Docker'],
+    team: true,
+    repo: null,
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A recruitment platform that manages applications and ranks CVs against job offers.',
+        problem: 'Reading every CV by hand takes recruiters a lot of time.',
+        objectives: ['Parse PDF and DOCX CVs', 'Compute a matching score per offer', 'Split the system into independent services'],
+        solution: 'A Python scoring service using sentence-transformers embeddings, alongside Spring Boot and ASP.NET Core services and an Angular frontend.',
+        architecture: 'Microservices behind an Nginx API Gateway · asynchronous messaging with RabbitMQ · JWT · PostgreSQL · Docker.',
+      },
+      fr: {
+        overview: 'Une plateforme de recrutement qui gère les candidatures et classe les CV par rapport aux offres.',
+        problem: 'Lire chaque CV à la main prend beaucoup de temps aux recruteurs.',
+        objectives: ['Analyser les CV PDF et DOCX', 'Calculer un score de matching par offre', 'Découper le système en services indépendants'],
+        solution: 'Un service Python de scoring basé sur les embeddings sentence-transformers, avec des services Spring Boot et ASP.NET Core et un frontend Angular.',
+        architecture: 'Microservices derrière une API Gateway Nginx · messagerie asynchrone RabbitMQ · JWT · PostgreSQL · Docker.',
+      },
+    },
+  },
+  {
+    id: 'hotel-management',
+    title: 'Hotel Management System',
+    code: 'booking → check-in → pay',
+    cats: ['fullstack', 'se'],
+    context: { en: 'Synthesis project · 2024–2025', fr: 'Projet de synthèse · 2024–2025' },
+    short: {
+      en: 'Hotel information system for bookings, check-in/check-out and payments.',
+      fr: "Système d'information hôtelier : réservations, check-in/check-out et paiements.",
+    },
+    tech: ['PHP', 'JavaScript', 'MySQL', 'C++', 'Java', 'UML', 'MERISE'],
+    team: true,
+    repo: null,
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'An information system covering the main operations of a hotel.',
+        problem: 'Bookings, stays and payments need to be tracked in one consistent system.',
+        objectives: ['Model the data with MERISE and UML', 'Build a web interface', 'Provide console tools for bookings'],
+        solution: 'A PHP/MySQL website plus C++ and Java console applications, designed with an agile approach.',
+        architecture: 'MCD/MLD and UML diagrams · PHP website · MySQL (phpMyAdmin) · C++ and Java console apps.',
+      },
+      fr: {
+        overview: "Un système d'information couvrant les principales opérations d'un hôtel.",
+        problem: 'Réservations, séjours et paiements doivent être suivis dans un même système cohérent.',
+        objectives: ['Modéliser les données avec MERISE et UML', 'Réaliser une interface web', 'Fournir des outils console pour les réservations'],
+        solution: 'Un site PHP/MySQL et des applications console en C++ et Java, conçus en démarche agile.',
+        architecture: 'MCD/MLD et diagrammes UML · site PHP · MySQL (phpMyAdmin) · applications console C++ et Java.',
+      },
+    },
+  },
+  {
+    id: 'realtime-monitoring',
+    title: 'Real-time Monitoring in C',
+    code: 'producer ⇄ consumer',
+    cats: ['se'],
+    context: { en: 'Escodeve internship · 2024', fr: 'Stage Escodeve · 2024' },
+    short: {
+      en: 'Multi-threaded application that reads, validates and monitors data with threshold alerts.',
+      fr: 'Application multi-threadée qui lit, valide et surveille des données avec alertes de seuils.',
+    },
+    tech: ['C', 'pthread', 'Mutex', 'Condition variables'],
+    team: true,
+    repo: null,
+    demoUrl: null,
+    youtube: null,
+    details: {
+      en: {
+        overview: 'A real-time monitoring application written in C.',
+        problem: 'Data must be acquired, processed and displayed at the same time without conflicts between threads.',
+        objectives: ['Handle acquisition, processing and display in parallel', 'Detect critical thresholds (temperature, pressure, speed)'],
+        solution: 'A producer–consumer model synchronised with mutexes and condition variables, with pause/resume commands and coloured alerts.',
+        architecture: 'Multi-threaded architecture based on pthread · file processing · console interface.',
+      },
+      fr: {
+        overview: 'Une application de surveillance en temps réel écrite en C.',
+        problem: 'Les données doivent être acquises, traitées et affichées en même temps, sans conflit entre threads.',
+        objectives: ['Gérer en parallèle acquisition, traitement et affichage', 'Détecter les seuils critiques (température, pression, vitesse)'],
+        solution: 'Un modèle producteur–consommateur synchronisé par mutex et variables de condition, avec commandes pause/reprise et alertes colorées.',
+        architecture: 'Architecture multi-threadée basée sur pthread · traitement de fichiers · interface console.',
+      },
+    },
+  },
+  {
+    id: 'discount-calculator-api',
+    title: 'Discount Calculator API',
+    code: 'GET /discount',
+    cats: ['se'],
+    context: { en: 'Coursework', fr: 'Projet de cours' },
+    short: { en: 'Spring Boot REST API that calculates discounts.', fr: 'API REST Spring Boot de calcul de remise.' },
+    tech: ['Java', 'Spring Boot', 'REST API'],
+    team: true,
+    repo: 'https://github.com/meryemammari23/discount-calculator-api',
+    demoUrl: null,
+    youtube: null,
+    details: null,
+  },
+  {
+    id: 'task-manager',
+    title: 'Task Manager (ASP.NET MVC)',
+    code: 'tasks · CRUD',
+    cats: ['fullstack'],
+    context: { en: 'Coursework', fr: 'TP' },
+    short: { en: 'Task management web application built with ASP.NET MVC.', fr: 'Application web de gestion de tâches en ASP.NET MVC.' },
+    tech: ['C#', 'ASP.NET MVC'],
+    team: true,
+    repo: 'https://github.com/meryemammari23/TP_TOdO',
+    demoUrl: null,
+    youtube: null,
+    details: null,
+  },
+];
+
+// Projets et stages en cours (section « In progress »).
+// url : lien public (GitHub, Colab partagé…) ou null. results : une ligne de résultats chiffrés, ou null.
+export const inProgress = [
+  {
+    id: 'darija-sentiment',
+    kind: { en: 'NLP project', fr: 'Projet NLP' },
+    title: { en: 'Sentiment Analysis of Moroccan Arabic & Darija Tweets', fr: 'Analyse de sentiments de tweets en arabe et en darija' },
+    since: { en: 'November 2026', fr: 'Novembre 2026' },
+    text: {
+      en: 'Classification of about 18,000 tweets (MAC corpus, standard Arabic and Darija) as positive, neutral or negative. Arabic normalisation and cleaning, then a comparison of six approaches: TF-IDF with Naive Bayes, logistic regression and linear SVM, FastText embeddings, a BiLSTM, and a fine-tuned DarijaBERT.',
+      fr: "Classification d'environ 18 000 tweets (corpus MAC, arabe standard et darija) en positif, neutre ou négatif. Normalisation et nettoyage de l'arabe, puis comparaison de six approches : TF-IDF avec Naive Bayes, régression logistique et SVM linéaire, embeddings FastText, un BiLSTM et DarijaBERT fine-tuné.",
+    },
+    results: {
+      en: 'Best model: fine-tuned DarijaBERT, accuracy 0.797 and macro F1 0.775 on the test set (best TF-IDF baseline: macro F1 0.699).',
+      fr: 'Meilleur modèle : DarijaBERT fine-tuné, accuracy 0,797 et F1 macro 0,775 sur le jeu de test (meilleure base TF-IDF : F1 macro 0,699).',
+    },
+    tags: ['Python', 'scikit-learn', 'TensorFlow / Keras', 'Hugging Face Transformers', 'DarijaBERT', 'FastText', 'Google Colab'],
+    url: null,
+  },
+  {
+    id: 'cold-chain',
+    kind: { en: 'Academic IoT project · team of 2', fr: 'Projet IoT académique · binôme' },
+    title: 'Cold Chain',
+    since: { en: '2026–2027', fr: '2026–2027' },
+    text: {
+      en: 'Monitoring of temperature and humidity in laboratory fridges: an ESP8266 board with a DHT11 sensor sends readings to a Django REST API.',
+      fr: "Suivi de la température et de l'humidité des frigos de laboratoire : une carte ESP8266 avec un capteur DHT11 envoie les mesures à une API Django REST.",
+    },
+    tags: ['ESP8266', 'DHT11', 'Django REST', 'IoT'],
+    url: null,
+  },
+];
